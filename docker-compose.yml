@@ -3,8 +3,8 @@ services:
   app:
     build: .
     ports:
-            - "8081:3000"
+      - "8081:3000"
     volumes:
-            - ./:/var/www/app
+      - ./:/var/www/app
     command:
-            sh -c 'npm i && node server.js'
+      sh -c 'npm i && node server.js'
