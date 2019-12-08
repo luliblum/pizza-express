@@ -29,6 +29,32 @@ if [[ $response != "200" ]]; then
 fi
 
 sudo docker rmi "$USERNAME/$IMAGE:latest"
+sleep 5
+
+if [[ $? != "0" ]]; then
+	echo "error in rm image container"
+	exit 1
+fi
+
 sudo docker tag "$USERNAME/$IMAGE:$VER" "$USERNAME/$IMAGE:latest"
+sleep 1
+if [[ $? != "0" ]]; then
+	echo "error in giving tag"
+	exit 1
+fi
+
 sudo docker push "$USERNAME/$IMAGE:$VER"
+sleep 5
+
+if [[ $? != "0" ]]; then
+	echo "error in push image"
+	exit 1
+fi
+
 sudo docker push "$USERNAME/$IMAGE:latest"
+sleep 2
+
+if [[ $? != "0" ]]; then
+	echo "error by pushing the latest name tag"
+	exit 1
+fi
