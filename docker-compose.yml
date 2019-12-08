@@ -2,6 +2,7 @@ version: '3'
 services:
   app:
     build: .
+    image: "313658874/pizza-express:v1.0"
     ports:
       - "8081:3000"
     volumes:
