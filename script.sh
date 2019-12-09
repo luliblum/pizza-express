@@ -43,7 +43,7 @@ if [[ $? != "0" ]]; then
 fi
 sleep 1
 
-docker login -u $USERNAME -p $PASSWORD 
+sudo docker login -u $USERNAME -p $PASSWORD 
 
 sudo docker push "$USERNAME/$IMAGE:$VER"
 if [[ $? != "0" ]]; then
