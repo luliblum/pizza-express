@@ -37,12 +37,12 @@ if [[ $response != "200" ]]; then
 	exit 1
 fi
 
-//sudo docker rmi "$USERNAME/$IMAGE:latest"
+# sudo docker rmi "$USERNAME/$IMAGE:latest"
 
-//if [[ $? != "0" ]]; then
-//	echo "error in rm image container"
-//	exit 1
-//fi
+#if [[ $? != "0" ]]; then
+#	echo "error in rm image container"
+#	exit 1
+#fi
 
 sudo docker login -u $USERNAME -p $PASSWORD 
 
