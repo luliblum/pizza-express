@@ -1,7 +1,8 @@
 #!/bin/bash
 
 . .env
-
+sudo docker-compose up &
+sleep 4 
 sudo docker exec -it pizza-express_app_1 npm test
 if [[ $? != "0" ]]; then
 	echo "error in test"
