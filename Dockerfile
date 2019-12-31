@@ -1,4 +1,9 @@
 FROM node:8.4.0
-# Or whatever Node version/image you want
-COPY . .
 WORKDIR '/var/www/app'
+COPY ./package.json ./
+RUN npm install
+COPY ./ ./
+CMD ["npm","start"]
+
+
+
